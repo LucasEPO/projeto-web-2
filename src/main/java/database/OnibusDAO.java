@@ -1,14 +1,12 @@
 package database;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import database.SigletonConnection;
 import model.OnibusBean;
 
 public class OnibusDAO {
@@ -16,7 +14,7 @@ public class OnibusDAO {
     private Connection conn;
 
     public OnibusDAO() {
-        conn = SigletonConnection.getConnection();
+        conn = SingletonConnection.getConnection();
     }
 
     public List<OnibusBean> selectAllOnibus(){
@@ -42,7 +40,7 @@ public class OnibusDAO {
                 frota.add(o);
             }
         } catch (SQLException e) {
-            SigletonConnection.printSQLException(e);
+            SingletonConnection.printSQLException(e);
         }
         
         return frota;

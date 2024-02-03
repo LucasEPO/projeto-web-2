@@ -21,7 +21,7 @@ public class LinhaServlet extends HttpServlet {
             throws ServletException, IOException {
 
         LinhaDAO linhasDAO = new LinhaDAO();
-        List<LinhaBean> listaLinhas = LinhaDAO.selectAllLinhas();
+        List<LinhaBean> listaLinhas = linhasDAO.selectAllLinhas();
         Gson gson = new Gson();
         String jsonListaLinhas = gson.toJson(listaLinhas);
         response.setContentType("application/json");

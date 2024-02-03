@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import database.SigletonConnection;
 import model.LinhaBean;
 
 public class LinhaDAO {
@@ -15,7 +14,7 @@ public class LinhaDAO {
     private Connection conn;
 
     public LinhaDAO() {
-        conn = SigletonConnection.getConnection();
+        conn = SingletonConnection.getConnection();
     }
 
     public List<LinhaBean> selectAllLinhas() {
@@ -36,7 +35,7 @@ public class LinhaDAO {
                 linhas.add(l);
             }
         } catch (SQLException e) {
-            //SigletonConnection.printSQLException(e);
+            SingletonConnection.printSQLException(e);
         }
 
         return linhas;

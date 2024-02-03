@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import database.SigletonConnection;
 import model.PontoBean;
 
 public class PontoDAO {
@@ -15,7 +14,7 @@ public class PontoDAO {
     private Connection conn;
 
     public PontoDAO() {
-        conn = SigletonConnection.getConnection();
+        conn = SingletonConnection.getConnection();
     }
 
     public List<PontoBean> selectAllPontos(){
@@ -35,7 +34,7 @@ public class PontoDAO {
                 pontos.add(p);
             }
         } catch (SQLException e) {
-            SigletonConnection.printSQLException(e);
+            SingletonConnection.printSQLException(e);
         }
         
         return pontos;

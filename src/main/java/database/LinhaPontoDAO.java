@@ -21,7 +21,7 @@ public class LinhaPontoDAO {
     private Connection conn;
 
     public LinhaPontoDAO() {
-        conn = SigletonConnection.getConnection();
+        conn = SingletonConnection.getConnection();
     }
 
     public List<LinhaPontoBean> selectLinhaPonto(Long ponto){
@@ -39,12 +39,15 @@ public class LinhaPontoDAO {
                 lp.setLinha_id(rs.getLong("linha_id"));
                 lp.setPonto_id(rs.getLong("ponto_id"));
                 lp.setHorario_chegada(rs.getString("horario_chegada"));
-                lp.setNome_linha(rs.getString("linha.nome"));
+                lp.setNome_linha(rs.getString("nome"));
                 
                 linhas.add(lp);
             }
+            for (LinhaPontoBean linhaPontoBean : linhas) {
+                System.out.println(linhaPontoBean.getNome_linha());
+            }
         } catch (SQLException e) {
-            SigletonConnection.printSQLException(e);
+            SingletonConnection.printSQLException(e);
             
         }
         
@@ -58,9 +61,9 @@ public class LinhaPontoDAO {
             pstmt.setLong(2, linha_id);
             pstmt.setLong(3, ponto_id);
 
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
         } catch (SQLException e) {
-            SigletonConnection.printSQLException(e);
+            SingletonConnection.printSQLException(e);
 
         }
     }
