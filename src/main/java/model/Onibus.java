@@ -6,7 +6,7 @@ public class Onibus {
 
     private int id;
     private String modelo;
-    private String linha;
+    private Long linha_id;
     private String terminal;
     private String caracteristicas;
     private int lotacaoMax;
@@ -17,17 +17,16 @@ public class Onibus {
     public Onibus() {
     }
 
-    public Onibus(int id, String modelo, String linha, String terminal, String caracteristicas,
-            int lotacaoMax, Date ultimaManutencao, int atrasos, String itinerario) {
+    public Onibus(int id, String modelo, Long linha_id, String terminal, String caracteristicas,
+            int lotacaoMax, Date ultimaManutencao, int atrasos) {
         this.id = id;
         this.modelo = modelo;
-        this.linha = linha;
+        this.linha_id = linha_id;
         this.terminal = terminal;
         this.caracteristicas = caracteristicas;
         this.lotacaoMax = lotacaoMax;
         this.ultimaManutencao = ultimaManutencao;
         this.atrasos = atrasos;
-        this.itinerario = itinerario;
     }
 
     // Getters e Setters
@@ -48,12 +47,12 @@ public class Onibus {
         this.modelo = modelo;
     }
 
-    public String getLinha() {
-        return linha;
+    public Long getLinha() {
+        return linha_id;
     }
 
-    public void setLinha(String linha) {
-        this.linha = linha;
+    public void setLinha(Long linha_id) {
+        this.linha_id = linha_id;
     }
 
     public String getTerminal() {

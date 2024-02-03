@@ -20,7 +20,6 @@ public class OnibusServlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        System.out.println("1");
         OnibusDAO onibusDAO = new OnibusDAO();
         List<Onibus> listaOnibus = onibusDAO.selectAllOnibus();
         Gson gson = new Gson();
@@ -28,7 +27,6 @@ public class OnibusServlet extends HttpServlet{
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
 
-        System.out.println("2");
 
         PrintWriter out = response.getWriter();
         out.print(jsonListaOnibus);
