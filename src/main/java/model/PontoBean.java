@@ -1,13 +1,13 @@
 package model;
 
-public class Ponto {
+public class PontoBean {
     private Long id;
     private String nome;
 
-    public Ponto(){
+    public PontoBean(){
     }
 
-    public Ponto(Long id, String nome) {
+    public PontoBean(Long id, String nome) {
         this.id = id;
         this.nome = nome;
     }

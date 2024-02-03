@@ -1,11 +1,14 @@
 package model;
 
-public class Linha {
+public class LinhaBean {
     private Long id;
     private String nome;
     private String regiao;
 
-    public Linha(Long id, String nome, String regiao) {
+    public LinhaBean() {
+    }
+
+    public LinhaBean(Long id, String nome, String regiao) {
         this.id = id;
         this.nome = nome;
         this.regiao = regiao;

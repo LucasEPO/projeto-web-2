@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import database.SigletonConnection;
-import model.Onibus;
+import model.OnibusBean;
 
 public class OnibusDAO {
     private String SELECT_ALL_ONIBUS = "SELECT * FROM Onibus";
@@ -19,8 +19,8 @@ public class OnibusDAO {
         conn = SigletonConnection.getConnection();
     }
 
-    public List<Onibus> selectAllOnibus(){
-        List<Onibus> frota = new ArrayList<>();
+    public List<OnibusBean> selectAllOnibus(){
+        List<OnibusBean> frota = new ArrayList<>();
 
         try{
             PreparedStatement pstmt = conn.prepareStatement(SELECT_ALL_ONIBUS);
@@ -28,7 +28,7 @@ public class OnibusDAO {
             ResultSet rs = pstmt.executeQuery();
 
             while(rs.next()){
-                Onibus o = new Onibus();
+                OnibusBean o = new OnibusBean();
                 
                 o.setId(rs.getInt("id"));
                 o.setModelo(rs.getString("modelo"));
@@ -42,7 +42,7 @@ public class OnibusDAO {
                 frota.add(o);
             }
         } catch (SQLException e) {
-            printSQLException(e);
+            SigletonConnection.printSQLException(e);
         }
         
         return frota;

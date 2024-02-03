@@ -2,7 +2,7 @@ package model;
 
 import java.util.Date;
 
-public class Onibus {
+public class OnibusBean {
 
     private int id;
     private String modelo;
@@ -14,10 +14,10 @@ public class Onibus {
     private int atrasos;
     private String itinerario;
 
-    public Onibus() {
+    public OnibusBean() {
     }
 
-    public Onibus(int id, String modelo, Long linha_id, String terminal, String caracteristicas,
+    public OnibusBean(int id, String modelo, Long linha_id, String terminal, String caracteristicas,
             int lotacaoMax, Date ultimaManutencao, int atrasos) {
         this.id = id;
         this.modelo = modelo;

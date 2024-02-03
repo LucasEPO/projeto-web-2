@@ -12,24 +12,23 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-import model.OnibusBean;
-import database.OnibusDAO;
+import model.LinhaBean;
+import database.LinhaDAO;
 
-@WebServlet("/onibus")
-public class OnibusServlet extends HttpServlet{
+@WebServlet("/linhas")
+public class LinhaServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        OnibusDAO onibusDAO = new OnibusDAO();
-        List<OnibusBean> listaOnibus = onibusDAO.selectAllOnibus();
+        LinhaDAO linhasDAO = new LinhaDAO();
+        List<LinhaBean> listaLinhas = LinhaDAO.selectAllLinhas();
         Gson gson = new Gson();
-        String jsonListaOnibus = gson.toJson(listaOnibus);
+        String jsonListaLinhas = gson.toJson(listaLinhas);
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
 
-
         PrintWriter out = response.getWriter();
-        out.print(jsonListaOnibus);
+        out.print(jsonListaLinhas);
         out.flush();
 
     }
