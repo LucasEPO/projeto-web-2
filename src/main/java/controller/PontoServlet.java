@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -9,6 +10,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
 
 import model.PontoBean;
 import database.PontoDAO;
@@ -21,8 +24,7 @@ public class PontoServlet extends HttpServlet {
         PontoDAO pontoDao = new PontoDAO();
         List<PontoBean> listaPontos = pontoDao.selectAllPontos();
         request.setAttribute("pontos", listaPontos);
-        RequestDispatcher view = request.getRequestDispatcher("pontos.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("/pages/pontos.jsp");
         view.forward(request, response);
-
     }
 }
