@@ -16,7 +16,7 @@ import model.OnibusBean;
 import database.OnibusDAO;
 
 @WebServlet("/onibus")
-public class OnibusServlet extends HttpServlet{
+public class OnibusServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -27,10 +27,8 @@ public class OnibusServlet extends HttpServlet{
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
 
-
         PrintWriter out = response.getWriter();
         out.print(jsonListaOnibus);
         out.flush();
-
     }
 }

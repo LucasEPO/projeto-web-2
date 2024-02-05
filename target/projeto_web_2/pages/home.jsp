@@ -7,6 +7,6 @@
 </head>
 <body>
     <button type="button"><a href="/projeto_web_2/pages/graficos.jsp">Graficos</a></button>
-    <button type="button">Pontos</button>
+    <button type="button"><a href="/projeto_web_2/pontos">Pontos</a></button>
 </body>
 </html>
