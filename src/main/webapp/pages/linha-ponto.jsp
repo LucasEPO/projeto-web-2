@@ -6,6 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/projeto_web_2/js/updateHorario.js"></script>
     <title>Pontos</title>
 </head>
 <body>
@@ -13,17 +15,19 @@
         <table border="1">
             <thead>
                 <tr>
+                    <th width="50">Linha</th>
                     <th width="50">Linha ID</th>
                     <th width="150">Ponto ID</th>
                     <th width="150">Horário</th>
                 </tr>
             </thead>
-            <tbody>
-                <% for(LinhaPontoBean linha : linhas){ %>
+            <tbody id="table-body">
+                <% for(int i = 0; i < linhas.size(); i++){ %>
                     <tr>
-                        <td><%=linha.getLinha_id()%></td>
-                        <td><%=linha.getPonto_id()%></td>
-                        <td><%=linha.getHorario_chegada()%></td>
+                        <td><%=linhas.get(i).getNome_linha()%></td>
+                        <td id="linha-<%=i%>"><%=linhas.get(i).getLinha_id()%></td>
+                        <td id="id-<%=i%>"><%=linhas.get(i).getPonto_id()%></td>
+                        <td><%=linhas.get(i).getHorario_chegada()%></td>
                     </tr>
                 <%} %>
             </tbody>
