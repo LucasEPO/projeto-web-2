@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	<script type="text/javascript" src="../js/charts.js"></script>
+	<script type="text/javascript" src="../js/graficos.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<title>charts</title>
 </head>

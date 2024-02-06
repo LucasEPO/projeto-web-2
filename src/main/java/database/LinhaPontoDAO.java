@@ -43,9 +43,7 @@ public class LinhaPontoDAO {
 
                 linhas.add(lp);
             }
-            for (LinhaPontoBean linhaPontoBean : linhas) {
-                System.out.println(linhaPontoBean.getNome_linha());
-            }
+            
         } catch (SQLException e) {
             SingletonConnection.printSQLException(e);
 

@@ -14,12 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import model.LinhaPontoBean;
-import model.PontoBean;
 import database.LinhaPontoDAO;
-import database.PontoDAO;
 
 @WebServlet("/linha-ponto")
-public class LInhaPontoServlet extends HttpServlet {
+public class LinhaPontoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 

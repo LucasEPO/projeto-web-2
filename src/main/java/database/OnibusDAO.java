@@ -35,7 +35,6 @@ public class OnibusDAO {
                 o.setCaracteristicas(rs.getString("caracteristicas"));
                 o.setLotacaoMax(rs.getInt("lotacao_max"));
                 o.setUltimaManutencao(rs.getDate("ultima_manutencao"));
-                o.setAtrasos(rs.getInt("atrasos"));
 
                 frota.add(o);
             }
